@@ -6,9 +6,10 @@ def print_triangle(height, size):
     for level in range(height):
         for x in range(size):
             print(" " * (size * (height - level - 1)),
-                    (" " * (size - x) +
+                    (" " * (size - x - 1) +
                     TRIANGLE_CHAR * (2*x + 1) +
-                    " " * (size - x-1)) * (level+1))
+                    " " * (size - x)) * (level+1),
+                    sep='')
 try:
     print(f"printing a {int(sys.argv[1])}-force of scale {int(sys.argv[2])}")
     print_triangle(int(sys.argv[1]), int(sys.argv[2]))
